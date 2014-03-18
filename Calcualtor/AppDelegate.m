@@ -7,15 +7,19 @@
 //
 
 #import "AppDelegate.h"
-
+#import "RootViewController.h"
 @implementation AppDelegate
-
+//应用程序加载完成是调用此方法
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    //根据设备屏幕大小初始化窗口
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    //将window设为主窗口，并令其显示
     [self.window makeKeyAndVisible];
+    //
+    self.window.rootViewController=[[RootViewController alloc]init];
     return YES;
 }
 
